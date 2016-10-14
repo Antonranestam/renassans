@@ -140,6 +140,7 @@ h6.comments-title {
  */
 .node .field-label {
   display: inline; }
+
 .node .field {
   margin: 10pt 0pt; }
 
@@ -164,7 +165,6 @@ table {
   body {
     background: #f8f8f8;
     padding: 100px 0px; }
-
   div.limiter {
     background: #fff;
     padding: .5in;
