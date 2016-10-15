@@ -387,7 +387,7 @@ body {
 
 .title {
   position: absolute;
-  font-size: 10.4rem;
+  font-size: 10rem;
   line-height: 120px;
   letter-spacing: 2px;
   left: 50px;
@@ -397,7 +397,14 @@ body {
   font-weight: normal; }
 
 .logo {
-  margin: 0; }
+  background: url("../../graphics/logo.png") transparent 0 0 no-repeat;
+  background: none, url("../../graphics/logo.svg") transparent 0 0 no-repeat;
+  margin: 0;
+  width: 120px;
+  height: 40px;
+  position: fixed;
+  left: 50px;
+  top: 25px; }
 
 .mute-btn {
   background: url("../../graphics/speaker.png") transparent 0 0 no-repeat;

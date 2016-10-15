@@ -1,3 +1,9 @@
 .logo {
+  @include svg-bg(logo);
   margin: 0;
+  width: 120px;
+  height: 40px;
+  position: fixed;
+  left: 50px;
+  top: 25px;
 }
