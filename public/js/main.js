@@ -1,9 +1,12 @@
 $(document).ready(function() {
+
   $('#music-player__mute').click(function () {
     toggleMute();
   })
 
   initialiseMediaPlayer();
+
+  progressBar();
 });
 
 var mediaPlayer;
@@ -17,7 +20,6 @@ function initialiseMediaPlayer() {
 
 // Toggle mute for music
 function toggleMute() {
-   var btn = document.getElementById('music-player__mute');
 
    if (mediaPlayer.muted) {
       mediaPlayer.muted = false;
@@ -25,4 +27,11 @@ function toggleMute() {
    else {
       mediaPlayer.muted = true;
    }
+}
+
+// Update progress bar
+function progressBar() {
+  $('#music').on('timeupdate', function() {
+    $('#progress-bar').attr("value", 100 * this.currentTime / this.duration);
+  });
 }
