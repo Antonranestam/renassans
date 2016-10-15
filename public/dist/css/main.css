@@ -388,8 +388,8 @@ body {
 .title {
   position: absolute;
   font-size: 10rem;
-  line-height: 120px;
-  letter-spacing: 2px;
+  line-height: 110px;
+  letter-spacing: 1px;
   left: 50px;
   top: 45%;
   transform: translateY(-50%);
