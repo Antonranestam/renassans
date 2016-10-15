@@ -33,4 +33,5 @@ button,
 
 body {
   @include font-size();
+  font-family: $avenir-black;
 }
