@@ -1,0 +1,8 @@
+.mute-btn {
+  @include svg-bg(speaker);
+  width: 40px;
+  height: 31px;
+  background-color: transparent;
+  text-indent: -9999px;
+  outline: 0;
+}

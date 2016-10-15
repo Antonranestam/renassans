@@ -393,10 +393,34 @@ body {
   left: 50px;
   top: 45%;
   transform: translateY(-50%);
-  margin: 0; }
+  margin: 0;
+  font-weight: normal; }
 
 .logo {
   margin: 0; }
+
+.mute-btn {
+  background: url("../../graphics/speaker.png") transparent 0 0 no-repeat;
+  background: none, url("../../graphics/speaker.svg") transparent 0 0 no-repeat;
+  width: 40px;
+  height: 31px;
+  background-color: transparent;
+  text-indent: -9999px;
+  outline: 0; }
+
+.music-player__bar {
+  background-color: rgba(255, 255, 255, 0.3);
+  height: 10px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0; }
+
+.music-player__bar__progress {
+  background-color: #fff;
+  height: 10px;
+  float: left;
+  width: 10%; }
 
 .bg {
   width: 100%;
@@ -411,7 +435,8 @@ body {
     height: 115%;
     object-fit: cover;
     position: fixed;
-    mix-blend-mode: soft-light; }
+    mix-blend-mode: soft-light;
+    -webkit-mix-blend-mode: soft-light; }
 
 .bg__two {
   transform: translateY(-10px) translateX(-15px); }
@@ -420,7 +445,31 @@ body {
   position: fixed;
   bottom: 0;
   left: 0;
-  right: 0; }
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.3);
+  font-size: 1.2rem;
+  padding: 35px 50px 25px;
+  text-transform: lowercase;
+  overflow: hidden; }
+  .music-player audio {
+    opacity: 0;
+    height: 0;
+    width: 0px;
+    overflow: hidden;
+    display: block; }
+
+.music-player__song {
+  margin: 0; }
+
+.music-player__desc {
+  font-family: "Avenir LT W01_55 Obliqu1475526";
+  margin: 0 0 5px; }
 
 .music {
   color: #fff; }
+
+.music-player__mute {
+  position: absolute;
+  right: 50px;
+  top: 50%;
+  margin-top: -7px; }

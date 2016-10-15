@@ -3,4 +3,26 @@
   bottom: 0;
   left: 0;
   right: 0;
+  background-color: rgba(255, 255, 255, .3);
+  font-size: 1.2rem;
+  padding: 35px 50px 25px;
+  text-transform: lowercase;
+  overflow: hidden;
+
+  audio {
+    opacity: 0;
+    height: 0;
+    width: 0px;
+    overflow: hidden;
+    display: block;
+  }
+}
+
+.music-player__song {
+  margin: 0;
+}
+
+.music-player__desc {
+  font-family: $avenir-ob;
+  margin: 0 0 5px;
 }
