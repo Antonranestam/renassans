@@ -421,13 +421,13 @@ body {
   position: absolute;
   left: 0;
   right: 0;
-  top: 0; }
+  top: 0;
+  width: 100%; }
 
 .music-player__bar__progress {
   background-color: #fff;
   height: 10px;
-  float: left;
-  width: 10%; }
+  float: left; }
 
 .bg {
   width: 100%;
