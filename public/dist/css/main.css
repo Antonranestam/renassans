@@ -449,9 +449,6 @@ progress[value]::-webkit-progress-value {
     mix-blend-mode: soft-light;
     -webkit-mix-blend-mode: soft-light; }
 
-.bg__two {
-  transform: translateY(-10px) translateX(-15px); }
-
 .music-player {
   position: fixed;
   bottom: 0;

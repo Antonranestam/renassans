@@ -37,28 +37,28 @@ function progressBar() {
   });
 }
 
-// Analyser node
 window.onload = function() {
   var ctx = new AudioContext();
   var audio = document.getElementById('music');
   var audioSrc = ctx.createMediaElementSource(audio);
   var analyser = ctx.createAnalyser();
-  // we have to connect the MediaElementSource with the analyser
+
   audioSrc.connect(analyser);
   audioSrc.connect(ctx.destination);
-  // we could configure the analyser: e.g. analyser.fftSize (for further infos read the spec)
 
-  // frequencyBinCount tells you how many values you'll receive from the analyser
+  // get data
   var frequencyData = new Uint8Array(analyser.frequencyBinCount);
 
-  // we're ready to receive some data!
-  // loop
+  // Render
   function renderFrame() {
-     requestAnimationFrame(renderFrame);
-     // update data in frequencyData
-     analyser.getByteFrequencyData(frequencyData);
-     // render frame based on values in frequencyData
-     // console.log(frequencyData)
+    requestAnimationFrame(renderFrame);
+    // update data in frequencyData
+    analyser.getByteFrequencyData(frequencyData);
+
+    $('.bg__one').css('transform', 'translateX(' + (- frequencyData[5]) / 10 + 'px)');
+    $('.bg__two').css('transform', 'translateX(' + (- frequencyData[1]) / 12 + 'px)');
+    $('.bg__three').css('transform', 'translateX(' + (- frequencyData[2]) / 9 + 'px)');
   }
+
   renderFrame();
 };
