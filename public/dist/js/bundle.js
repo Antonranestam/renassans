@@ -50,9 +50,10 @@ window.onload = function () {
   // get data
   var frequencyData = new Uint8Array(analyser.frequencyBinCount);
 
-  // Render
-  function renderFrame() {
-    requestAnimationFrame(renderFrame);
+  // Render shake for backgrounds
+  function renderShake() {
+    requestAnimationFrame(renderShake);
+
     // update data in frequencyData
     analyser.getByteFrequencyData(frequencyData);
 
@@ -64,7 +65,20 @@ window.onload = function () {
     $('.bg__three').css('transform', 'translateX(' + -frequencyData[2] / 15 + 'px)');
   }
 
-  renderFrame();
+  function renderAudioVis() {
+    requestAnimationFrame(renderAudioVis);
+
+    // update data in frequencyData
+    analyser.getByteFrequencyData(frequencyData);
+
+    $('.music-player__vis__blob--one').css('transform', 'translateY(' + -frequencyData[1] / 15 + 'px)');
+    $('.music-player__vis__blob--two').css('transform', 'translateY(' + -frequencyData[2] / 15 + 'px)');
+    $('.music-player__vis__blob--three').css('transform', 'translateY(' + -frequencyData[3] / 15 + 'px)');
+    $('.music-player__vis__blob--four').css('transform', 'translateY(' + -frequencyData[4] / 15 + 'px)');
+  }
+
+  renderShake();
+  renderAudioVis();
 };
 
 },{}]},{},[1]);

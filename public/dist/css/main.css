@@ -456,6 +456,24 @@ progress[value]::-webkit-progress-value {
 .bg__three {
   margin: -7px 0 0 -15px; }
 
+.music-player__vis {
+  position: absolute;
+  top: 40px;
+  right: 250px;
+  z-index: -1;
+  opacity: 0.8; }
+
+.music-player__vis__blob {
+  height: 70px;
+  width: 280px;
+  display: block;
+  border-radius: 100%;
+  float: left;
+  margin: 0 -130px 0 0;
+  filter: blur(25px); }
+  [data-color=pink] .music-player__vis__blob {
+    background: linear-gradient(to left, #FF00CC, #333399); }
+
 .music-player {
   position: fixed;
   bottom: 0;
