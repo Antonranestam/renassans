@@ -1,8 +1,34 @@
 .mute-btn {
-  @include svg-bg(speaker);
   width: 40px;
   height: 31px;
   background-color: transparent;
   text-indent: -9999px;
   outline: 0;
+
+  &:hover {
+
+    svg {
+      transform: scale(0.98);
+    }
+  }
+
+  &:active {
+
+    svg {
+      transform: scale(0.9);
+    }
+  }
+}
+
+.mute-icon {
+  display: block;
+  transition: .1s;
+
+  .active & {
+
+    .string-1,
+    .string-2 {
+      fill: transparent;
+    }
+  }
 }

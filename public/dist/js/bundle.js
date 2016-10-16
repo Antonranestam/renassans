@@ -5,12 +5,19 @@ $(document).ready(function () {
 
   $('#music-player__mute').click(function () {
     toggleMute();
+    $(this).toggleClass('active');
   });
 
   initialiseMediaPlayer();
 
   progressBar();
+
+  shuffle();
 });
+
+function shuffle() {
+  $('.title').shuffleLetters();
+}
 
 var mediaPlayer;
 
@@ -38,6 +45,7 @@ function progressBar() {
   });
 }
 
+// Audio visualizer bar music player
 window.onload = function () {
   var ctx = new AudioContext();
   var audio = document.getElementById('music');
@@ -71,10 +79,12 @@ window.onload = function () {
     // update data in frequencyData
     analyser.getByteFrequencyData(frequencyData);
 
-    $('.music-player__vis__blob--one').css('transform', 'translateY(' + -frequencyData[1] / 15 + 'px)');
-    $('.music-player__vis__blob--two').css('transform', 'translateY(' + -frequencyData[2] / 15 + 'px)');
-    $('.music-player__vis__blob--three').css('transform', 'translateY(' + -frequencyData[3] / 15 + 'px)');
-    $('.music-player__vis__blob--four').css('transform', 'translateY(' + -frequencyData[4] / 15 + 'px)');
+    $('.music-player__vis__blob--one').css('transform', 'translateY(' + -frequencyData[1] / 13 + 'px)');
+    $('.music-player__vis__blob--two').css('transform', 'translateY(' + -frequencyData[2] / 13 + 'px)');
+    $('.music-player__vis__blob--three').css('transform', 'translateY(' + -frequencyData[3] / 13 + 'px)');
+    $('.music-player__vis__blob--four').css('transform', 'translateY(' + -frequencyData[4] / 13 + 'px)');
+    $('.music-player__vis__blob--five').css('transform', 'translateY(' + -frequencyData[5] / 13 + 'px)');
+    $('.music-player__vis__blob--six').css('transform', 'translateY(' + -frequencyData[6] / 13 + 'px)');
   }
 
   renderShake();
