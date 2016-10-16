@@ -56,9 +56,12 @@ window.onload = function () {
     // update data in frequencyData
     analyser.getByteFrequencyData(frequencyData);
 
-    $('.bg__one').css('transform', 'translateX(' + -frequencyData[5] / 10 + 'px)');
-    $('.bg__two').css('transform', 'translateX(' + -frequencyData[1] / 12 + 'px)');
-    $('.bg__three').css('transform', 'translateX(' + -frequencyData[2] / 9 + 'px)');
+    // Animate transform
+    $('.bg__one').css('transform', 'translateX(' + -frequencyData[5] / 20 + 'px)');
+
+    $('.bg__two').css('transform', 'translateX(' + frequencyData[1] / 15 + 'px)');
+
+    $('.bg__three').css('transform', 'translateX(' + -frequencyData[2] / 15 + 'px)');
   }
 
   renderFrame();

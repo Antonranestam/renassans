@@ -430,8 +430,7 @@ body {
   float: left; }
 
 progress[value]::-webkit-progress-value {
-  background-color: #fff;
-  transition: 2s; }
+  background-color: #fff; }
 
 .bg {
   width: 100%;
@@ -443,11 +442,19 @@ progress[value]::-webkit-progress-value {
     background: linear-gradient(to left, #00A1FF, #0072FF); }
   .bg img {
     width: 102%;
-    height: 115%;
+    height: 110%;
     object-fit: cover;
     position: fixed;
-    mix-blend-mode: soft-light;
-    -webkit-mix-blend-mode: soft-light; }
+    mix-blend-mode: soft-light; }
+
+.bg__one {
+  margin: -10px 0 0 -20px; }
+
+.bg__two {
+  margin: 2px 0 0 -15px; }
+
+.bg__three {
+  margin: -7px 0 0 -15px; }
 
 .music-player {
   position: fixed;
