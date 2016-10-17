@@ -31,10 +31,43 @@
 			<h1 class="title">we – re:<em class="title-mabbr">form</em> <br /> digital experiences <br /> for tomorrow.</h1>
 
 			<section class="music-player">
+				<progress id='progress-bar' class="music-player__bar" min='0' max='100' value='0'>0% played</progress>
 				<h2 class="music-player__desc">deciding on color palette with</h2>
 				<h2 class="music-player__song">The Notorious B.I.G - Juicy</h2>
 
-				<button class="mute-btn music-player__mute">Mute music</button>
+				<button class="mute-btn music-player__mute" id="music-player__mute">
+					<svg class="mute-icon" width="40px" height="31px" viewBox="0 0 40 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+					        <g id="real" transform="translate(-1317.000000, -943.000000)" fill="#FFFFFF">
+					            <g id="player" transform="translate(-59.000000, 891.000000)">
+					                <g id="speaker-1" transform="translate(1376.000000, 52.000000)">
+					                    <g id="Capa_1">
+					                        <g id="Group">
+					                            <path d="M23.2989691,0.0124 C20.5360825,0.0124 17.8309278,0.748133333 15.4639175,2.1452 C13.3525773,3.39346667 11.5628866,5.12946667 10.2515464,7.19613333 L4.34639175,7.19613333 C1.94639175,7.19613333 0,9.14706667 0,11.5526667 L0,19.4473333 C0,21.8529333 1.94639175,23.8038667 4.34639175,23.8038667 L10.2515464,23.8038667 C11.5628866,25.8705333 13.3525773,27.6065333 15.4639175,28.8548 C17.8309278,30.2518667 20.5360825,30.9876 23.2989691,30.9876 C23.9175258,30.9876 24.4123711,30.4916 24.4123711,29.8716 L24.4123711,1.1284 C24.4123711,0.516666667 23.9175258,0.0124 23.2989691,0.0124 L23.2989691,0.0124 Z M9.76494845,21.5718667 L4.34639175,21.5718667 C3.17525773,21.5718667 2.22680412,20.6212 2.22680412,19.4473333 L2.22680412,11.5526667 C2.22680412,10.3788 3.17525773,9.42813333 4.34639175,9.42813333 L9.76494845,9.42813333 L9.76494845,21.5718667 L9.76494845,21.5718667 Z M22.185567,28.7142667 C18.0041237,28.3588 14.1938144,26.0028 11.9917526,22.382 L11.9917526,8.62626667 C14.1938144,5.00546667 18.0041237,2.64946667 22.185567,2.294 L22.185567,28.7142667 L22.185567,28.7142667 Z" id="Shape"></path>
+					                            <path class="string-1" d="M28.7752577,6.8572 C28.2721649,6.50173333 27.5793814,6.62573333 27.2247423,7.13826667 C26.8701031,7.64253333 26.9938144,8.33693333 27.5051546,8.6924 C29.7319588,10.2465333 31.0597938,12.8009333 31.0597938,15.5124 C31.0597938,18.2238667 29.7319588,20.7782667 27.5051546,22.3324 C27.0020619,22.6878667 26.8783505,23.3822667 27.2247423,23.8865333 C27.4391753,24.2006667 27.785567,24.366 28.1402062,24.366 C28.3628866,24.366 28.585567,24.2998667 28.7752577,24.1676 C31.5958763,22.1918667 33.2865979,18.9596 33.2865979,15.5206667 C33.2865979,12.0817333 31.5958763,8.82466667 28.7752577,6.8572 L28.7752577,6.8572 Z" id="Shape"></path>
+					                            <path class="string-2" d="M33.0804124,2.23613333 C32.5773196,1.88066667 31.8845361,2.00466667 31.5298969,2.5172 C31.1752577,3.02146667 31.2989691,3.71586667 31.8103093,4.07133333 C35.5463918,6.6836 37.7731959,10.9574667 37.7731959,15.5041333 C37.7731959,20.0508 35.5463918,24.3329333 31.8103093,26.9369333 C31.3072165,27.2924 31.1835052,27.9868 31.5298969,28.4910667 C31.7443299,28.8052 32.0907216,28.9705333 32.4453608,28.9705333 C32.6680412,28.9705333 32.8907216,28.9044 33.0804124,28.7721333 C37.4103093,25.7465333 40,20.7865333 40,15.5041333 C40,10.2217333 37.4185567,5.26173333 33.0804124,2.23613333 L33.0804124,2.23613333 Z" id="Shape"></path>
+					                        </g>
+					                    </g>
+					                </g>
+					            </g>
+					        </g>
+					    </g>
+					</svg>
+				</button>
+
+				<audio id="music" autoplay controls>
+				  <source src="music/biggie.mp3" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio>
+
+				<span class="music-player__vis" data-color="pink">
+					<span class="music-player__vis__blob music-player__vis__blob--one"></span>
+					<span class="music-player__vis__blob music-player__vis__blob--two"></span>
+					<span class="music-player__vis__blob music-player__vis__blob--three"></span>
+					<span class="music-player__vis__blob music-player__vis__blob--four"></span>
+					<span class="music-player__vis__blob music-player__vis__blob--five"></span>
+					<span class="music-player__vis__blob music-player__vis__blob--six"></span>
+				</span>
 			</section>
 		</section>
 	</body>
