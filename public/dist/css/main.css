@@ -394,8 +394,7 @@ body {
   top: 45%;
   transform: translateY(-50%);
   margin: 0;
-  font-weight: normal;
-  width: 70%; }
+  font-weight: normal; }
 
 .logo {
   background: url("../../graphics/logo.png") transparent 0 0 no-repeat;
@@ -565,7 +564,7 @@ progress[value]::-webkit-progress-value {
   margin: -10px 0 0 -20px; }
 
 .bg__two {
-  margin: 2px 0 0 -15px; }
+  margin: 0 0 0 -15px; }
 
 .bg__three {
   margin: -7px 0 0 -15px; }

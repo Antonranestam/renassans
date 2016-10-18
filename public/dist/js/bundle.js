@@ -8,22 +8,29 @@ $(document).ready(function () {
     $(this).toggleClass('active');
   });
 
-  loaderTimeline();
+  // loaderTimeline();
   initialiseMediaPlayer();
+
+  // Run shuffle letters animation
   shuffle();
+
+  // Run progress bar function
+  progressBar();
 });
 
+// Shuffle letters function
 function shuffle() {
-  $('.title').shuffleLetters();
+  $('.title span').shuffleLetters();
 }
 
+// Init media player
 var mediaPlayer;
 
-// Init media player
 function initialiseMediaPlayer() {
   mediaPlayer = document.getElementById('music');
   mediaPlayer.controls = false;
   mediaPlayer.load();
+  mediaPlayer.play();
 }
 
 // Toggle mute for music
@@ -38,9 +45,30 @@ function toggleMute() {
 
 // Update progress bar
 function progressBar() {
+
   $('#music').on('timeupdate', function () {
-    $('#progress-bar').attr("value", 100 * this.currentTime / this.duration);
+    var musicTime = 100 * this.currentTime / this.duration;
+
+    $('#progress-bar').attr("value", musicTime);
+
+    // Callback for transition
+    if(musicTime == '100') {
+      switchMusic();
+    }
   });
+}
+
+function switchMusic() {
+  $('.title-abbr').text(musicData.song2.abbr);
+  $('.music-player__desc').text(musicData.song2.desc);
+  $('.music-player__song').text(musicData.song2.musicname);
+  $('.bg img').attr('src', musicData.song2.bg);
+  $('#music source').attr('src', musicData.song2.url);
+
+  mediaPlayer.load();
+
+  $('.title-abbr').shuffleLetters();
+
 }
 
 // // Animate loader
@@ -83,11 +111,11 @@ window.onload = function () {
     analyser.getByteFrequencyData(frequencyData);
 
     // Animate transform
-    $('.bg__one').css('transform', 'translateX(' + -frequencyData[5] / 20 + 'px)');
+    $('.bg__one').css('transform', 'translateX(' + -frequencyData[5] / 25 + 'px)');
 
-    $('.bg__two').css('transform', 'translateX(' + frequencyData[1] / 15 + 'px)');
+    $('.bg__two').css('transform', 'translateX(' + frequencyData[1] / 20 + 'px)', 'translateY(' + frequencyData[1] / 15 + 'px)');
 
-    $('.bg__three').css('transform', 'translateX(' + -frequencyData[2] / 15 + 'px)');
+    $('.bg__three').css('transform', 'translateX(' + -frequencyData[2] / 25 + 'px)');
   }
 
   function renderAudioVis() {
@@ -107,5 +135,22 @@ window.onload = function () {
   renderShake();
   renderAudioVis();
 };
+
+var musicData = {
+  "song1": {
+    abbr:"form",
+    desc:"deciding on color palette with",
+    musicname:"the notorious b.i.g - juicy",
+    url:"music/biggie.mp3",
+    bg: "img/biggie.jpg",
+  },
+  "song2": {
+    abbr:"design",
+    desc:"answering design questions with",
+    musicname:"charles bradley - nobody but you",
+    url:"music/charles.mp3",
+    bg: "img/charles.jpg"
+  },
+}
 
 },{}]},{},[1]);

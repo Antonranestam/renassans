@@ -5,7 +5,7 @@ $(document).ready(function() {
     $(this).toggleClass('active');
   })
 
-  loaderTimeline();
+  // loaderTimeline();
   initialiseMediaPlayer();
   shuffle();
 });
