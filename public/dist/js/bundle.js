@@ -21,6 +21,7 @@ $(document).ready(function () {
 // Shuffle letters function
 function shuffle() {
   $('.title span').shuffleLetters();
+  $('.title em').shuffleLetters();
 }
 
 // Init media player
@@ -59,14 +60,17 @@ function progressBar() {
 }
 
 function switchMusic() {
+  // Change data
   $('.title-abbr').text(musicData.song2.abbr);
   $('.music-player__desc').text(musicData.song2.desc);
   $('.music-player__song').text(musicData.song2.musicname);
   $('.bg img').attr('src', musicData.song2.bg);
   $('#music source').attr('src', musicData.song2.url);
 
+  // Reload media player for new song
   mediaPlayer.load();
 
+  // Shuffle letters for abbr
   $('.title-abbr').shuffleLetters();
 
 }
